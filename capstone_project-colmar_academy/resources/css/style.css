@@ -1,0 +1,365 @@
+    /* universal styles */
+body {
+  font-size: 16px;
+  font-family: 'Quattrocento', serif;
+  line-height: 1.4;
+}
+
+.jumbotron { /* default value used as container several places */
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.left {
+  width: 60%;
+  margin: 2rem 1.5rem; /* 32px 24px */
+}
+
+.right {
+  width: 40%;
+  margin: 1rem 0; /* to align .left and .right vertically along with '.readmore figure' */
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.grey {
+  background-color: hsla(0, 0%, 90%, 1); /* lightgrey */
+}
+
+.strongBlue {
+  background-color: hsla(200, 100%, 50%, 1); /* nice blue */
+}
+
+.blue {
+  color: hsla(200, 100%, 50%, 1);  /* nice blue */
+}
+
+h1, h2, h3, .normal, .bold {
+  color: hsla(0, 0%, 30%, 1); /* keeps a single place to change hue, saturation, lightness and alpha values */
+}
+
+h1, h2, .bold { /* .bold is used for bold/strong part of logo */
+  font-weight: bold; /* same as font-weight: 700; */
+}
+
+h1, h2 {
+  font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+.normal {
+  font-weight: normal;
+}
+
+p, .light, footer a {
+  color: hsla(0, 0%, 30%, 0.7); /* light grey default color for above elements */
+  font-weight: 200; /* light font-weight */
+  transition: color 300ms ease-in-out 200ms; /* transition for 'footer a', see below */
+}
+
+footer a:hover {
+  color: hsla(200, 100%, 50%, 1);  /* nice blue */
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mobile {
+  display: none; /* do not display .mobile in desktop mode  */
+}
+
+@media only screen and (max-width: 960px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: flex;
+  }
+}
+
+    /* header (nav) section */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem; /* 64px */
+  padding: 0.5rem 1.5rem; /* 24px distance from sides to header items */
+}
+
+#logo, nav ul {
+  display: flex;
+  align-items: center;
+}
+
+#logo a { /* align 'a href' (ColmarAcademy) next to logo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo img {
+  height: 2rem;
+}
+
+nav li {
+  margin-right: 1rem; /* margin between links in nav */
+}
+
+nav li:last-child {
+  margin-right: 0rem; /* make sure the distance between nav and right side of window is the same as distance between logo and left side of window */
+}
+
+nav a {
+  color: hsla(0, 0%, 10%, 1); /* serious dark */
+  transition: color 300ms ease-in-out 200ms;
+}
+
+nav a:hover {
+  color: hsla(200, 100%, 50%, 1); /* nice blue */
+}
+
+@media only screen and (max-width: 960px) {
+  header {
+    justify-content: center;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  nav li {
+    height: 2rem; /* keep mobile link logos in the same place horizontally as desktop nav */
+  }
+}
+
+    /* learn section */
+#learn .jumbotron {
+  align-items: center;
+}
+
+#learn .firstBanner {
+  width: 80%; /* creates an aesthetically more pleasing distance on the right of text of #learn */
+}
+
+#learn .right h3 {
+  margin: 2rem 0; /* distance between the three text elements in .learnSomething */
+}
+
+#learn .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  border: 1px solid hsla(200, 100%, 50%, 1); /* nice blue */
+  color: hsla(0, 0%, 100%, 1); /* white */
+  transition: color 1000ms ease-in 600ms, background-color 700ms ease-in 200ms;
+}
+
+#learn .button:hover {
+  color: hsla(200, 100%, 50%, 1);  /* nice blue */
+  background-color: hsla(0, 0%, 100%, 1); /* white */
+  border: 1px solid hsla(200, 100%, 50%, 1);  /* nice blue */
+}
+
+@media only screen and (max-width: 960px) {
+  #learn .jumbotron {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #learn .left {
+    width: 100%; /* use entire width in mobile mode */
+    margin: 0;
+  }
+
+  #learn .right {
+    width: 100%; /* use entire width in mobile mode */
+    margin: 2rem 1rem;
+  }
+
+  #learn .firstBanner {
+    width: 100%; /* let text spread out all over the webpage, essentially removing the distance on the right of text of #learn */
+  }
+}
+
+    /* practice section */
+#practice .left h2 {
+  margin: 2rem 0 1.5rem 0; /* 32px 24px */
+}
+
+#practice .left p {
+  margin-bottom: 2rem; /* 32px */
+}
+
+.readmore {
+  display: flex;
+  align-items: center; /* align text for practice vertically right aside text */
+}
+
+.readmorePic {
+  width: 35%; /* left side of .readmore */
+  height: auto;
+  margin: 1rem; /* necessary but pushes the images out of horizontal alignment with .left (see margin of 'practice .right' for correction of this) */
+}
+
+.readmoreText {
+  width: 65%; /* right side of .readmore */
+  height: auto;
+}
+
+.readmoreText a {
+  color: hsla(200, 100%, 50%, 1); /* nice blue */
+  transition: font-weight 300ms ease-in-out 200ms;
+}
+
+.readmoreText a:hover {
+  font-weight: bold;
+}
+
+.readmoreText p {
+  margin: .5rem 0; /* 8px above and below  */
+}
+
+@media only screen and (max-width: 960px) {
+  #practice .right, #practice .readmorePic, #practice .readmoreText {
+    width: 100%; /* use entire width in mobile mode */
+  }
+
+  #practice .right {
+    padding: 1rem 1rem 2rem 1rem; /* 16px 16px 32px 16px */
+  }
+
+  #practice .readmore {
+    flex-direction: column;
+  }
+
+  #practice .readmoreText {
+    padding: 2rem 1rem 4rem 2rem; /* text indented */
+  }
+}
+    /* start section */
+.title {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#start .title h2 {
+  padding-top: 2rem;
+}
+
+#start .courses {
+  display: flex;
+  flex-wrap: wrap; /* wrap .courses' child elements (.box elements) to next line when necessary */
+  justify-content: center;
+  margin: 2rem 4.5rem;
+}
+
+#start .courses .box {
+  width: 30%;
+  height: auto;
+  margin: 0 1rem 2rem 1rem; /* 32px distance between .box elements vertically and horizontally (1rem + 1rem = 2rem = 32px) */
+  display: flex;
+  flex-direction: column; /* courses text below each other */
+  background-color: hsla(0, 0%, 100%, 1); /* white */
+}
+
+#start .boxText {
+  margin: 1rem 1.5rem 1.5rem 1rem; /* 16px 24px 24px 16px */
+}
+
+.boxText h2 {
+  padding-bottom: 1rem;
+}
+
+.boxText p {
+  margin: 0.5rem 0; /* 8px top and bottom */
+}
+
+@media only screen and (max-width: 960px) {
+  #start2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #start2 h2 {
+    margin-bottom: 1rem;
+  }
+
+  #start2 h3 {
+    font-weight: bold;
+  }
+
+  #start2 .box {
+    margin: .5rem 1rem;
+    padding: 1rem 1rem 1.5rem 1rem;
+  }
+}
+
+    /* thesis section */
+#thesis .left h3 {
+  margin: 1.5rem 0 0.5rem 0; /* 32px 24px */
+}
+
+#thesis .left p {
+  margin-bottom: 2rem; /* 32px */
+}
+
+#thesis .right {
+  margin: 2rem 0; /* align .left and .right side of thesis */
+}
+
+#thesis video {
+  max-width: 100%; /* keep video from using entire width of window */
+  height: auto;
+}
+
+@media only screen and (max-width: 960px) {
+  #thesis .left {
+    width: 100%; /* lets video use entire width of window */
+    margin: 1rem 0 1.5rem; /* 16px 0 24px 0 */
+  }
+}
+
+    /* footer */
+footer {
+  border-top: 0.01rem solid hsla(0, 0%, 30%, 0.7); /* thin lightgrey color, same as used for 'p' and 'logo'  */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem; /* 24px distance from sides to header items */
+}
+
+footer span {
+  padding: 1rem;
+}
+
+footer span:first-child {
+  margin-right: .5rem; /* 8px, but with 'footer span' of 1rem it becomes 24px */
+}
